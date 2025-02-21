@@ -1917,15 +1917,19 @@ plugins:
   - name: 'aberrationsofthedwemer.esp'
     group: *verifiedCreationsGroup
 
+  # Abyss - The Lost Levels
+  - name: 'theabyssll.esp'
+    group: *verifiedCreationsGroup
+
   # Aetherforged Gigamaul
   - name: 'gigamaul.esp'
     group: *verifiedCreationsGroup
 
-  # Albion Armor - Outpost Edition
+  # Albion Armor • Outpost Edition
   - name: 'ccbgsssexxxalbionarmor.esp'
     group: *verifiedCreationsGroup
 
-  # Aldmeri Anti-Mage
+  # Aldmeri Anti-mage
   - name: 'ccrs001.esl'
     group: *verifiedCreationsGroup
 
@@ -1933,7 +1937,7 @@ plugins:
   - name: 'gildancientcivfull.esp'
     group: *verifiedCreationsGroup
   
-  # Ancient Coldharbour Armor
+  # ANCIENT COLDHARBOUR ARMOR
   - name: 'ccbgsssexxxdaedralordarmor.esp'
     group: *verifiedCreationsGroup
 
@@ -1941,11 +1945,11 @@ plugins:
   - name: 'animatedweapon-mehrunes'' razor.esl'
     group: *verifiedCreationsGroup
 
-  # Anise's Cabin - Claim a New Home
+  # Anise’s Cabin - Claim a New Home
   - name: 'anisecabinplayerhome.esl'
     group: *verifiedCreationsGroup
 
-  # Archer's Armaments
+  # Archer’s Armaments
   - name: 'archersarmaments.esl'
     group: *verifiedCreationsGroup
 
@@ -1993,19 +1997,23 @@ plugins:
   - name: 'gilddarkandlight.esl'
     group: *verifiedCreationsGroup
 
-  # DrJacopo's 3D Deathbell
+  # DrJacopo`s 3D Autumn Ferns
+  - name: 'drjacopo''s - 3d autumn ferns.esl'
+    group: *verifiedCreationsGroup
+
+  # DrJacopo`s 3D Deathbell
   - name: 'drjacopo''s - 3d deathbell.esl'
     group: *verifiedCreationsGroup
 
-  # DrJacopo's 3D Juniper
+  # DrJacopo`s 3D Juniper
   - name: 'drjacopo''s - 3d juniper.esl'
     group: *verifiedCreationsGroup
 
-  # DrJacopo's 3D Lavender
+  # DrJacopo`s 3D Lavender
   - name: 'dr jacopo''s - 3d lavender.esl'
     group: *verifiedCreationsGroup
 
-  # DrJacopo's 3D Plants - Volume I
+  # DrJacopo`s 3D Plants - Volume I
   - name: 'drjacopo''s 3d plants - volume i.esl'
     group: *verifiedCreationsGroup
 
@@ -2025,7 +2033,7 @@ plugins:
   - name: 'kinggathcreations_eastempirecompany.esp'
     group: *verifiedCreationsGroup
 
-  # Echos of the Vale
+  # Echoes of the Vale
   - name: 'echoesofthevale.esp'
     group: *verifiedCreationsGroup
 
@@ -2041,10 +2049,6 @@ plugins:
   - name: 'gildforgottenarmorycollection.esp'
     group: *verifiedCreationsGroup
 
-  # Into the Abyss - The Lost Levels
-  - name: 'theabyssll.esp'
-    group: *verifiedCreationsGroup
-
   # Katja The Thief
   - name: 'unockatja.esl'
     group: *verifiedCreationsGroup
@@ -2057,11 +2061,11 @@ plugins:
   - name: 'legendarydungeons-nordic.esm'
     group: *verifiedCreationsGroup
 
-  # Listener's Initiates
+  # Listener’s Initiates
   - name: 'listener''s initiates.esl'
     group: *verifiedCreationsGroup
 
-  # Longtooth Lair - Vampire Home
+  # Longtooth Lair - Vampire home
   - name: ceejsse004_lair.esp
     group: *verifiedCreationsGroup
 
@@ -2093,7 +2097,7 @@ plugins:
   - name: 'bmarnorthernwoodstreehouse.esp'
     group: *verifiedCreationsGroup
 
-  # Rivershadow Retreat - Claim Narfi's House
+  # Rivershadow Retreat - Claim Narfi’s house
   - name: 'narfisplayerhome.esl'
     group: *verifiedCreationsGroup
 
@@ -2105,7 +2109,7 @@ plugins:
   - name: 'rg439rkund.esp'
     group: *verifiedCreationsGroup
 
-  # Seeking Out Scarlet - A Quest
+  # Seeking out Scarlet - A Quest
   - name: 'sosvc02quest.esl'
     group: *verifiedCreationsGroup
 
@@ -2137,7 +2141,7 @@ plugins:
   - name: 'asetheend.esl'
     group: *verifiedCreationsGroup
 
-  # The Hidden - Quests and a Dungeon
+  # The Hidden - Quests and A Dungeon
   - name: 'thehidden.esp'
     group: *verifiedCreationsGroup
 
@@ -2181,11 +2185,11 @@ plugins:
   - name: 'monstrrous light armor.esp'
     group: *verifiedCreationsGroup
 
-  # Xila's Monstrrous Dragons - A Terrifying Retexture
+  # Xila’s Monstrrous Dragons - A Terrifying Retexture
   - name: 'monstrrous dragons.esl'
     group: *verifiedCreationsGroup
 
-  # Xila's Elven, Glass and Blood Glass Weapons
+  # Xila’s Elven, Glass and Blood Glass Weapons
   - name: 'blood glass weapons.esp'
     group: *verifiedCreationsGroup
 
