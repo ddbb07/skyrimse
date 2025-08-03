@@ -477,6 +477,12 @@ common:
       - 'Vokrii - Minimalistic Perks of Skyrim'
       - '[Umgak''s Vokrii Compatibility Patch Compendium](https://www.nexusmods.com/skyrimspecialedition/mods/26278/)'
 
+  # &patchUnavailable
+  - &patchUnavailableRequiem
+    <<: *patchUnavailable
+    subs: [ 'Requiem - The Roleplaying Overhaul' ]
+    condition: 'active("Requiem.esp")'
+
   # &requiresMCM_X
   - &requiresMCM
     <<: *requiresMCM_X
@@ -3363,8 +3369,11 @@ plugins:
         name: 'ArteFakes - Unique Artifacts Replacer'
   - name: 'ArteFake.esp'
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - ArteFakes.esp") and version("Requiem.esp", "6.0.0", <)'
     tag:
       - Actors.ACBS
       - Actors.DeathItem
@@ -10529,7 +10538,7 @@ plugins:
       - 'SkyRe_Main.esp'
     msg:
       - <<: *compatNotes
-        subs: [ 'https://requiem.atlassian.net/wiki/spaces/RSSE/pages/2658926593/Compatibility+Advice' ]
+        subs: [ 'https://github.com/ProbablyManuel/requiem/wiki#compatibility-advice' ]
       - *includesMBBF
   - name: 'Requiem - No Overencumbered Messages.esp'
     url:
@@ -11557,9 +11566,11 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - CCOR.esp") and version("Requiem.esp", "6.0.0", <)'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_CCOR_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patchUpdateAvailable
         type: warn
         subs: [ '[CCOR PRUFEI Chest CTD Hotfix](https://www.nexusmods.com/skyrimspecialedition/mods/28608/)' ]
@@ -12983,7 +12994,7 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF.esp") and version("Requiem.esp", "6.0.0", <)'
       - <<: *patch3rdParty
         subs:
           - 'Triss Armor Retextured'
@@ -12995,6 +13006,8 @@ plugins:
         condition: 'active("Vokrii - Minimalistic Perks of Skyrim.esp") and not active("Vokrii - WACCF Patch.esp") and not active("Complete Crafting Overhaul_Remastered.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_WACCF_Patch.esp")'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0xA8EBA40E
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
@@ -18302,6 +18315,8 @@ plugins:
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("AetheriumSwordsnArmor_CCOR_Patch.esp")'
       - <<: *patch3rdParty_LotD
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_AetheriumWeapons_Patch.esp") and version("LegacyoftheDragonborn.esm", "5.0.24", >=)'
+      - <<: *patch3rdParty_RPC
+        condition: 'active("Requiem.esp") and not active("Requiem - Aetherium Armor.esp")'
     clean:
       - crc: 0xFA7F23A7
         util: 'SSEEdit v4.0.4b'
@@ -18481,7 +18496,9 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - *requiresMCM
       - *requiresMCMVR
     tag:
@@ -19553,12 +19570,15 @@ plugins:
   - name: 'KatanaCrafting.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5306/' ]
     msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_CCOR_Patch.esp")'
       - <<: *patch3rdParty_KPH_WACCF
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Complete Crafting Overhaul_Remastered.esp") and not active("KatanaCrafting_WACCF_Patch.esp")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Katana Crafting.esp") and version("Requiem.esp", "5.3.0", <)'
 
   - name: 'ktWeaponPackSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/15050/' ]
@@ -19994,7 +20014,12 @@ plugins:
       - <<: *patch3rdParty_MLU
         condition: 'active("MLU.esp") and not active("MLU_HeavyArmory Patch.esp")'
       - <<: *patch3rdParty_RPC
-        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp")'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory.esp") and version("Requiem.esp", "5.3.0", <)'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Heavy Armory Patch](https://www.nexusmods.com/skyrimspecialedition/mods/89009/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Heavy Armory Patch.esp") and version("Requiem.esp", "5.3.0", >=)'
       - <<: *patchIncluded
         subs: [ 'Weapons Armor Clothing and Clutter Fixes' ]
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("PrvtI_HeavyArmory_WACCF_Patch.esp")'
@@ -29310,7 +29335,21 @@ plugins:
         subs: [ 'Requiem - Legacy of the Dragonborn patch' ]
         condition: 'file("DBM_Requiem_Patch.esp")'
 
+  - name: 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/34829/'
+        name: 'Requiem - Dragonborn Patch'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+
   ### Requiem Patch Central ###
+  - name: 'Requiem - Aetherium Armor.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
+        name: 'Requiem Patch Central'
+    after: [ 'Requiem - Improved Closefaced Helmets.esp' ]
   - name: 'Requiem - ArteFakes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -29325,7 +29364,8 @@ plugins:
         name: 'Requiem Patch Central'
     after:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
-      - 'Requiem - Cutting Room Floor.esp'
+      - name: 'Requiem - Cutting Room Floor.esp'
+        condition: 'version("Requiem - Audio Overhaul Skyrim.esp", "5.06", <)'
   - name: 'Requiem - Book Covers Skyrim.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -29352,7 +29392,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
         name: 'Requiem Patch Central'
-    after: [ 'Requiem - Minor Arcana - Roleplaying.esp' ]
+    after:
+      - name: 'Requiem - Minor Arcana - Roleplaying.esp'
+        condition: 'version("Requiem - ESF Companions.esp", "5.02", <)'
   - name: 'Requiem - Flora Fixes.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -29380,7 +29422,9 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
         name: 'Requiem Patch Central'
-    after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
+    after:
+      - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
+      - 'Requiem - Creation Club.esp'
   - name: 'Requiem - Rough Leather Armor.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -29393,7 +29437,8 @@ plugins:
     after:
       - 'Fozars_Dragonborn_-_Requiem_Patch.esp'
       - 'Requiem - Minor Arcana - Vigilants of Stendarr.esp'
-      - 'Requiem - Warmonger Armory.esp'
+      - name: 'Requiem - Warmonger Armory.esp'
+        condition: 'version("Requiem - Royal Armory.esp", "5.02", <)'
   - name: 'Requiem - Scoped Bows.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/64410/'
@@ -29438,6 +29483,59 @@ plugins:
         name: 'Requiem Patch Central'
     after: [ 'Fozars_Dragonborn_-_Requiem_Patch.esp' ]
     inc: [ 'Requiem - SkyTEST.esp' ]
+
+  - name: 'Requiem - Standing Stones Reimagined.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/113346/' ]
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+
+  ### Requiem - WACCF CCOR ACE Patches ###
+  - name: 'Requiem - WACCF.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+  - name: 'Requiem - WACCF - ACE.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+  - name: 'Requiem - CCOR.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/31758/'
+        name: 'Requiem - WACCF CCOR ACE Patches'
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+
+  - name: 'Requiem - Sacrilege.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/72578/' ]
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+
+  - name: 'Requiem - Sacrosanct Patch.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/62406/' ]
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
+
+  - name: 'Requiem - Summermyst.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/67594/' ]
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "5.3.0", >=)'
+
+  - name: 'Requiem - Triumvirate.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/88561/' ]
+    msg:
+      - <<: *patchOutdated
+        condition: 'version("Requiem.esp", "6.0.0", >=)'
 
   - name: 'rll(_lite)?_scarcity_patch\.esp'
     url:
@@ -30478,3 +30576,12 @@ plugins:
       - C.Owner
       - Keywords
       - Names
+
+  - name: 'VMUVM.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/3125/'
+        name: 'Vastly More Unique Visage of Mzund'
+    msg:
+      - <<: *alreadyInX
+        subs: [ '**Requiem.esp**' ]
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
