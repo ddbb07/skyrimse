@@ -8539,6 +8539,7 @@ plugins:
           - 'Wintersun - Faiths of Skyrim'
           - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
         condition: 'active("Wintersun - Faiths of Skyrim.esp") and not active("Wintersun - SIC Patch.esp")'
+      - <<: *patchUnavailableRequiem
       - *requiresMCM
       - *requiresMCMVR
       - type: say
@@ -16829,7 +16830,7 @@ plugins:
 
   - name: 'Religion.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25487/' ]
-    after: [ 'Requiem.esp' ]
+    msg: [ *patchUnavailableRequiem ]
     tag:
       - Graphics
       - Keywords
@@ -17416,7 +17417,7 @@ plugins:
 
   - name: 'EnchantingAwakened.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/18558/' ]
-    after: [ 'Requiem.esp' ]
+    msg: [ *patchUnavailableRequiem ]
 
   - name: 'Growl - Werebeasts of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/31245/' ]
@@ -19343,6 +19344,7 @@ plugins:
         condition: 'active("LegacyoftheDragonborn.esm") and not active("DBM_IA_Patch.esp")'
       - <<: *patch3rdParty_KPH_CCOR
         condition: 'active("Complete Crafting Overhaul_Remastered.esp") and not active("Hothtrooper44_ArmorCompilation_CCOR_Patch.esp") and not active("IARR, CCOR Patch.esp")'
+      - <<: *patchUnavailableRequiem
       - <<: *requiresResources
         subs: [ '[Immersive Armors - Asdasfa Tweaks and Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/85433/)' ]
         condition: 'version("Hothtrooper44_ArmorCompilation.esp", "1.2.0IARR", ==) and not file("meshes/armor/ala")'
@@ -19484,6 +19486,7 @@ plugins:
           - 'A Rose in the Snow - Reborn'
           - '[Patch for A Rose in the Snow - Reborn and Immersive Weapons](https://www.nexusmods.com/skyrimspecialedition/mods/149020/)'
         condition: 'active("A Rose in the Snow.esp") and not active("ARIS_WI_Patch.esp")'
+      - <<: *patchUnavailableRequiem
     tag:
       - Delev
       - Graphics
