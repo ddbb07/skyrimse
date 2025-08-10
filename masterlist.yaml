@@ -10531,14 +10531,21 @@ plugins:
     inc:
       - 'Adamant.esp'
       - 'Aetherius.esp'
+      - 'Andromeda - Unique Standing Stones of Skyrim.esp'
       - 'Apothecary.esp'
       - 'Arena.esp'
       - 'Artificer.esp'
+      - 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
+      - 'Freyr - Integrated Standing Stones of Skyrim.esp'
       - 'Gourmet.esp'
       - 'HandtoHand.esp'
+      - 'Imperious - Races of Skyrim.esp'
       - 'Manbeast.esp'
+      - 'Mannaz - Integrated Races of Skyrim.esp'
+      - 'Morningstar - Minimalistic Races of Skyrim.esl'
       - 'Mundus.esp'
       - 'MysticismMagic.esp'
+      - 'Odin - Skyrim Magic Overhaul.esp'
       - 'Ordinator - Perks of Skyrim.esp'
       - 'PathOfSorcery.esp'
       - 'PerkusMaximus_Mage.esp'
@@ -10552,12 +10559,23 @@ plugins:
       - 'Sorcerer.esp'
       - 'Stormcrown.esp'
       - 'Thaumaturgy.esp'
+      - 'Trua - Minimalistic Faiths of Skyrim.esp'
+      - 'Vokrii - Minimalistic Perks of Skyrim.esp'
     msg:
       - <<: *compatNotes
         subs: [ 'https://github.com/ProbablyManuel/requiem/wiki#compatibility-advice' ]
       - <<: *compatIssuesWithX
         subs: [ '**Blade and Blunt - A Combat Overhaul**' ]
         condition: 'active("BladeAndBlunt.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ '**Smilodon - Combat of Skyrim**' ]
+        condition: 'active("Smilodon - Combat of Skyrim.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ '**Valravn - Integrated Combat of Skyrim**' ]
+        condition: 'active("Valravn - Integrated Combat of Skyrim.esp")'
+      - <<: *compatIssuesWithX
+        subs: [ '**Wildcat - Combat of Skyrim**' ]
+        condition: 'active("Wildcat - Combat of Skyrim.esp")'
       - *includesMBBF
   - name: 'Requiem - No Overencumbered Messages.esp'
     url:
@@ -13206,6 +13224,11 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/136/' ]
       - *includesMBBF
       - *patch3rdParty_SRPC
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Apocalypse - Magic of Skyrim patch](https://www.nexusmods.com/skyrimspecialedition/mods/78643/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Apocalypse Compatibility Patch.esp")'
       - <<: *patchProvided
         subs: [ 'Ordinator - Perks of Skyrim' ]
         condition: 'active("Ordinator - Perks of Skyrim.esp") and not active("Apocalypse - Ordinator Compatibility Patch.esp")'
@@ -13419,7 +13442,9 @@ plugins:
 
   - name: 'Cosmic Spells.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/29352/' ]
-    msg: [ *patch3rdParty_SRPC_Redux ]
+    msg:
+      - <<: *patch3rdParty_SRPC_Redux
+      - <<: *patchUnavailableRequiem
 
   - name: 'Daedric Entity Restoration Project.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/3604/' ]
@@ -14379,6 +14404,13 @@ plugins:
       - <<: *patchProvided
         subs: [ 'Adamant: A Perk Overhaul' ]
         condition: 'active("Adamant.esp") and not active("Triumvirate - Adamant Compatibility Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Triumvirate Mage Archetypes](https://www.nexusmods.com/skyrimspecialedition/mods/88561/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Triumvirate.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0x8949A9E7
         util: 'SSEEdit v4.0.3'
@@ -14458,6 +14490,11 @@ plugins:
           - 'Zim''s Immersive Artifacts'
           - '[Wintersun - More Patches](https://www.nexusmods.com/skyrimspecialedition/mods/24228/)'
         condition: 'active("ZIA_Complete Pack.esp") and not active("Wintersun - ZIA Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Wintersun Patch SSE Plotinuz Update](https://www.nexusmods.com/skyrimspecialedition/mods/61069/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Wintersun Patch SSE Plotinuz Update.esp")'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO_Wintersun.esp")'
       - <<: *patch3rdParty_KPH_TCIY
@@ -17422,6 +17459,11 @@ plugins:
       - *includesMBBF
       - <<: *patch3rdParty
         subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Growl](https://www.nexusmods.com/skyrimspecialedition/mods/72577/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Growl.esp")'
+      - <<: *patch3rdParty
+        subs:
           - 'Mortal Enemies'
           - '[Growl - Mortal Enemies Patch](https://www.nexusmods.com/skyrimspecialedition/mods/31270/)'
         condition: 'active("Mortal Enemies( - No RunWalk Changes| - Rival Remix( - NoRunWalkChanges)?| - 2.0 Test Version)?\.esp") and not file("Growl-MortalEnemies Patch.esp")'
@@ -17659,7 +17701,15 @@ plugins:
       - Sound
       - SpellStats
       - Text
-    msg: [ *includesMBBF ]
+    msg:
+      - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Sacrilege](https://www.nexusmods.com/skyrimspecialedition/mods/72578/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrilege.esp") and version("Requiem.esp", "6.0.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
     clean:
       - crc: 0x96E2166B
         util: 'SSEEdit v4.0.3f'
@@ -17685,6 +17735,13 @@ plugins:
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/articles/54' ]
       - *includesMBBF
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Sacrosanct Patch](https://www.nexusmods.com/skyrimspecialedition/mods/62406/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", "6.0.0", <)' 
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patch3rdParty_KPH_CACO
         condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("Sacrosanct_CACO_Patch.esp")'
     clean:
@@ -17789,7 +17846,6 @@ plugins:
       - 'PerkusMaximus_Master.esp'
       - 'PerkusMaximus_Thief.esp'
       - 'PerkusMaximus_Warrior.esp'
-      - 'Requiem.esp'
     tag:
       - Delev
       - EffectStats
@@ -20398,6 +20454,13 @@ plugins:
           - 'Weapons Armor Clothing and Clutter Fixes'
           - '[Summermyst - WACCF Patch](https://www.nexusmods.com/skyrimspecialedition/mods/34547/)'
         condition: 'active("Weapons Armor Clothing & Clutter Fixes.esp") and not active("Summermyst - WACCF Patch.esp")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - Summermyst](https://www.nexusmods.com/skyrimspecialedition/mods/67594/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Summermyst.esp") and version("Requiem.esp", "5.3.0", <)'
+      - <<: *patchUnavailableRequiem
+        condition: 'active("Requiem.esp") and version("Requiem.esp", "5.3.0", >=)'
     clean:
       # version: 3.07SSE
       - crc: 0x1F17FC44
@@ -30603,3 +30666,7 @@ plugins:
       - <<: *alreadyInX
         subs: [ '**Requiem.esp**' ]
         condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
+
+  - name: 'Tonal Architect.esp'
+    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/51199/' ]
+    msg: [ *patchUnavailableRequiem ]
