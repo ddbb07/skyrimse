@@ -17744,7 +17744,7 @@ plugins:
         subs:
           - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - Sacrosanct Patch](https://www.nexusmods.com/skyrimspecialedition/mods/62406/)'
-        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", "6.0.0", <)' 
+        condition: 'active("Requiem.esp") and not active("Requiem - Sacrosanct Patch.esp") and version("Requiem.esp", "6.0.0", <)'
       - <<: *patchUnavailableRequiem
         condition: 'active("Requiem.esp") and version("Requiem.esp", "6.0.0", >=)'
       - <<: *patch3rdParty_KPH_CACO
@@ -18208,7 +18208,7 @@ plugins:
   - name: 'Apocrypha Paper Map for FWMF.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/92774/'
-        name: 'Apocrypha Paper Map for FWMF'   
+        name: 'Apocrypha Paper Map for FWMF'
   - name: 'Blackreach Paper Map for FWMF.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/53878/'
@@ -18305,7 +18305,7 @@ plugins:
         name: 'Midwood Isle Paper Map for FWMF'
   - name: 'Sea of Causality Paper Map for FWMF by Limon.esp'
     url:
-      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/146754/' 
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/146754/'
         name: 'DAc0da Paper Map for FWMF by Limon'
   - name: 'Vigilant Paper Map for FWMF.esp'
     url:
