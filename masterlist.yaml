@@ -28710,6 +28710,15 @@ plugins:
         name: 'Alternate Start - No More Blinkenlights'
     req: [ 'alternate start - live another life.esp' ]
 
+  ### Bards College Expansion - Unofficial Patches ###
+  - name: 'Bards College Expansion - Inigo Patch.esp'
+    url:
+      - link: 'https://forum.kinggathcreations.com/resources/bards-college-expansion-unofficial-patches.5/'
+        name: 'Bards College Expansion - Unofficial Patches'
+    after:
+      - 'Inigo Official Patch SE.esp'
+      - 'Inigo Official Patch SE (ESPFE).esp'
+
   - name: 'BaseFL-.*\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/74626/'
@@ -29132,6 +29141,15 @@ plugins:
       - <<: *useInstead
         subs: [ '[Requiem - Improved Closefaced Helmets.esp](https://www.nexusmods.com/skyrimspecialedition/mods/64410/)' ]
         condition: 'active("Requiem.esp")'
+
+  - name: 'Inigo Official Patch SE( \(ESPFE\))?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/62868/'
+        name: 'Inigo Official Patch'
+    msg:
+      - <<: *useOnlyOneX
+        subs: [ 'Inigo Official Patch ESP' ]
+        condition: 'many("Inigo Official Patch SE( \(ESPFE\))?\.esp")'
 
   - name: 'ISC_drinking_sound_fix.esp'
     url:
