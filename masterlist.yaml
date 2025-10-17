@@ -6379,6 +6379,44 @@ plugins:
       - crc: 0x377C96B6
         util: 'SSEEdit v4.0.3'
 
+  - name: 'Window Shadows Ultimate( Supplement)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/150494/'
+        name: 'Window Shadows Ultimate'
+  - name: 'Window Shadows Ultimate.esp'
+    group: *cellLightingGroup
+    req:
+      - *BaseObjSwap
+      - name: 'SKSE/Plugins/LightingUtil.dll'
+        display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
+      - name: 'SKSE/Plugins/XEMIUtil.dll'
+        display: '[XEMI Utility](https://www.nexusmods.com/skyrimspecialedition/mods/159084/)'
+    inc:
+      - 'ELFX Shadows.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Lux.esp'
+      # A05D4081: Full v3.0
+      # C5529E7D: Interiors only v3.0
+      - name: 'RelightingSkyrim_SSE.esp'
+        detail: 'Incompatible with interiors versions.'
+        condition: 'checksum("RelightingSkyrim_SSE.esp", A05D4081) or checksum("RelightingSkyrim_SSE.esp", C5529E7D)'
+      - 'Shadows.esp'
+      - 'Skyrim is Luminous.esp'
+    msg:
+      - <<: *compatPatch
+        subs: [ '[Window Shadows Ultimate - Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/151548/)' ]
+    dirty:
+      - <<: *quickClean
+        crc: 0x8B4AC778
+        util: '[SSEEdit v4.1.5o](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 1
+  - name: 'Window Shadows Ultimate Supplement.esp'
+    dirty:
+      - <<: *quickClean
+        crc: 0x5C3B3806
+        util: '[SSEEdit v4.1.5o](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 7
+
   - name: 'WinterOverhaul.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/22071/' ]
     dirty:
