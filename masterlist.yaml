@@ -9418,13 +9418,14 @@ plugins:
     msg:
       - <<: *patchIncluded
         subs: [ 'Complete Alchemy and Cooking Overhaul' ]
-        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and (checksum("Landscape and Water Fixes.esp", 94E75110) or checksum("Landscape and Water Fixes.esp", C4E0A265)) and not active("Landscape and Water Fixes - Patch - CACO.esp")'
+        # 0x6D655320: Default v9.9.1A (Free Crops not checked in FOMOD)
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and checksum("Landscape and Water Fixes.esp", 6D655320) and not active("Landscape and Water Fixes - Patch - CACO.esp")'
       - <<: *patchIncluded
         subs: [ 'Enhanced Lights and FX' ]
         condition: 'active("EnhancedLightsandFX.esp") and not active("Landscape and Water Fixes - Patch - ELFX.esp") and not active("ELFX Shadows.esp")'
       - <<: *patchIncluded
         subs: [ 'Landscape Fixes For Grass Mods' ]
-        condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Landscape and Water Fixes - Patch - LFfGM.esp")'
+        condition: 'active("Landscape Fixes For Grass Mods.esp") and not active("Landscape and Water Fixes( - Patch)? - LFfGM( - GotT)?( - Water for ENB)?( patch)?\.esp")'
     tag:
       - C.Climate
       - C.ImageSpace
@@ -9440,6 +9441,12 @@ plugins:
       - crc: 0xCC137B4C
         util: 'SSEEdit v4.0.3g'
   # Skyrim Landscape and Water Fixes Patches #
+  - name: 'Landscape and Water Fixes - Patch - Alternate Start - LFfGM.esp'
+    after:
+      - 'Landscape and Water Fixes - LFfGM - GotT - Water for ENB patch.esp'
+      - 'Landscape and Water Fixes - LFfGM - GotT patch.esp'
+      - 'Landscape and Water Fixes - LFfGM - Water for ENB patch.esp'
+      - 'Landscape and Water Fixes - Patch - LFfGM.esp'
   - name: 'Landscape and Water Fixes - Patch - ELFX.esp'
     inc: [ 'ELFX Shadows.esp' ]
   - name: 'Landscape and Water Fixes - Patch - Relighting Skyrim.esp'
@@ -9526,6 +9533,12 @@ plugins:
         util: 'SSEEdit v4.0.4b'
   - name: 'Landscape (Fixes )?For Grass Mods .*\.esp'
     after: [ 'Landscape Fixes For Grass Mods.esp' ]
+  - name: 'Landscape Fixes For Grass mods - Alternate start Locations.esp'
+    after:
+      - 'Landscape and Water Fixes - LFfGM - GotT - Water for ENB patch.esp'
+      - 'Landscape and Water Fixes - LFfGM - GotT patch.esp'
+      - 'Landscape and Water Fixes - LFfGM - Water for ENB patch.esp'
+      - 'Landscape and Water Fixes - Patch - LFfGM.esp'
   - name: 'Landscape For Grass Mods - Arthmoor''s Dragon Bridge PATCH.esp'
     after: [ 'dragon bridge.esp' ]
   - name: 'Landscape For Grass Mods -Immersive Citizens PATCH.esp'
