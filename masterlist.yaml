@@ -7125,9 +7125,13 @@ plugins:
       - crc: 0x9B789EF8
         util: 'SSEEdit v4.0.3f'
   - name: 'AI Overhaul - KaliliesNPCs Patch.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/30247/'
+        name: 'Kalilies NPCs'
     req:
       - name: 'cutting room floor.esp'
+        display: 'a version of Cutting Room Floor older than v3.1.23'
+        constraint: 'version("cutting room floor.esp", "3.1.23", <)'
         condition: 'checksum("AI Overhaul - KaliliesNPCs Patch.esp", D063D027)'
     msg:
       - <<: *useVersion
