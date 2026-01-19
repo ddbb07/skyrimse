@@ -18154,7 +18154,7 @@ plugins:
     msg:
       - <<: *patchUpdateAvailable
         subs: [ '[QuickLootIE](https://www.nexusmods.com/skyrimspecialedition/mods/120075/) **OR** [1.6.1170 Support (DLL Only) - Fixed](https://github.com/WaterFace/QuickLootEE/releases/latest)' ]
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and not version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", >=) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
       - *requiresMCM
       - *requiresMCMVR
       - <<: *useOnlyOneX
@@ -18164,7 +18164,7 @@ plugins:
         subs:
           - 'QuickLoot EE'
           - 'Skyrim'
-        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", <) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
+        condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.5.97.0", >) and not version("SKSE/Plugins/QuickLootEE.dll", "1.2.0.0", >=) and not file("SKSE/Plugins/QuickLootEE-NG.dll")'
     clean:
       - crc: 0x0F6F63D9
         util: 'SSEEdit v4.1.5g'
@@ -25336,7 +25336,7 @@ plugins:
         subs:
           - '1.5.00'
           - 'OCW_Obscure''s_CollegeofWinterhold.esp'
-        condition: 'version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", <)'
+        condition: 'not version("OCW_Obscure''s_CollegeofWinterhold.esp", "1.5.00", >=)'
     clean:
       # OCW
       - crc: 0xB8CF33F0
