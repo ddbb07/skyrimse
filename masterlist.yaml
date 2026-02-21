@@ -2303,11 +2303,14 @@ plugins:
           - '1.6.1130'
           - 'Skyrim Special Edition'
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", <) and version("unofficial skyrim special edition patch.esp", "4.3.1", >=)'
+    dirty:
+      - <<: *quickClean
+        crc: 0xCE922FDA
+        util: '[SSEEdit v4.1.5p](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        itm: 78
     clean:
-      # Do not clean - 1 ITM that is likely not worth cleaning
-      # German
-      - crc: 0xB3AB07FD
-        util: 'SSEEdit v4.0.4'
+      - crc: 0xF905CCB4
+        util: 'SSEEdit v4.1.5p'
 
   - name: 'Unofficial (Skyrim Creation Club Content|Arcane Accessories|(Arcane Archer|Expanded Crossbow|Saturalia Holiday) Pack|Arms of Chaos|Bittercup|Bloodchill Manor|Bone Wolf|Bow of Shadows|Chrysamere|Civil War Champions|(Daedric|Dragon|Dwarven|Ebony|Elven Hunter|Iron|Netch Leather|Orcish|Silver|Spell Knight|Stalhrim Fur|Steel Soldier|Vigil Enforcer) ?(Mail|Plate|Scaled?)? Armor(s| Set)?|Dawnfang and Duskfang|Dead Man''s Dread|Divine Crusader|Dwarven (Armored Mudcrab|Home)|Elite Crossbows|Farming|Forgotten Seasons|Gallows Hall|Ghosts of the Tribunal|Goblins|Goldbrand|Gray Cowl Returns|Headmans Cleaver|Hendraheim|Lord''s Mail|Myrwatch|Necromantic Grimoire|Nix-Hound|Nordic Jewelry|Pets of Skyrim|Plague of the Dead|Redguard Elite Armaments|Ruin''s Edge|Shadowfoot Sanctum|Shadowrend|Staff of Sheogorath|Staves|Stendarr''s Hammer|Sunder & Wraithguard|The (Cause|Contest)|Tundra Homestead|Umbra|Wild Horses) Patch\.esl'
     url:
