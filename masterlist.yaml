@@ -11743,6 +11743,12 @@ plugins:
       - crc: 0x7117CBA9
         util: 'SSEEdit v4.0.3'
 
+  # Outdated Mod
+  - name: 'iNeed( - Extended)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/645/'
+        name: 'iNeed - Food Water and Sleep'
+  # Updated Mod
   - name: 'iNeed( - (Extended|Dangerous Diseases))?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/'
