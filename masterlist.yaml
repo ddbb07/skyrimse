@@ -11743,14 +11743,10 @@ plugins:
       - crc: 0x7117CBA9
         util: 'SSEEdit v4.0.3'
 
-  # Outdated Mod
   - name: 'iNeed( - Extended)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/645/'
         name: 'iNeed - Food Water and Sleep'
-  # Updated Mod
-  - name: 'iNeed( - (Extended|Dangerous Diseases))?\.esp'
-    url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/'
         name: 'iNeed - Food Water and Sleep - Continued'
   - name: 'iNeed.esp'
@@ -11782,6 +11778,9 @@ plugins:
       - crc: 0xB726B0E8
         util: 'SSEEdit v4.1.5p'
   - name: 'iNeed - Dangerous Diseases.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/'
+        name: 'iNeed - Food Water and Sleep - Continued'
     msg:
       - <<: *patchProvided
         subs: [ 'Complete Alchemy & Cooking Overhaul' ]
